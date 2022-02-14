@@ -1,10 +1,62 @@
+// import { Avatar, Box, Typography } from '@mui/material'
 import React from 'react'
 
-import { ExampleComponent } from 'solunika-datatable'
-import 'solunika-datatable/dist/index.css'
+import CustomDataGrid from 'solunika-datatable'
+// import 'solunika-datatable/dist/index.css'
 
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
+
+  const rows = [
+    { "id": 1, "firstName": "DevOps", "lastName": "Solunika", "profilePicture": "https://mannoapp.s3.sa-east-1.amazonaws.com/profile/rwD9G4GzDtOsg6P8NwyytI4qLkk2.jpeg", "email": "devopssolunika@gmail.com", "phone": "541122800360", "deleted": true, "createdAt": "1633944352000", "tasks": [{ "id": 1, "deletedAt": "1634650264000", "status": "PUBLISHED", "paid": null, "budgets": [], "__typename": "Task" }, { "id": 2, "deletedAt": "1634650264000", "status": "PUBLISHED", "paid": null, "budgets": [], "__typename": "Task" }, { "id": 3, "deletedAt": "1634650264000", "status": "PUBLISHED", "paid": null, "budgets": [], "__typename": "Task" }, { "id": 4, "deletedAt": null, "status": "HIRED", "paid": null, "budgets": [{ "id": 1, "amount": 2000, "userSeen": true, "__typename": "Budget" }], "__typename": "Task" }, { "id": 5, "deletedAt": "1634650264000", "status": "PUBLISHED", "paid": null, "budgets": [], "__typename": "Task" }, { "id": 17, "deletedAt": null, "status": "QUALIFIED", "paid": 12345, "budgets": [{ "id": 16, "amount": 12345, "userSeen": true, "__typename": "Budget" }], "__typename": "Task" }, { "id": 18, "deletedAt": null, "status": "QUALIFIED", "paid": 42238, "budgets": [{ "id": 17, "amount": 42238, "userSeen": true, "__typename": "Budget" }], "__typename": "Task" }, { "id": 19, "deletedAt": "1634650264000", "status": "PUBLISHED", "paid": null, "budgets": [], "__typename": "Task" }, { "id": 20, "deletedAt": "1634650264000", "status": "PUBLISHED", "paid": null, "budgets": [], "__typename": "Task" }, { "id": 21, "deletedAt": "1634650264000", "status": "BUDGETED", "paid": null, "budgets": [{ "id": 19, "amount": 52222, "userSeen": false, "__typename": "Budget" }], "__typename": "Task" }, { "id": 22, "deletedAt": "1634650264000", "status": "BUDGETED", "paid": null, "budgets": [{ "id": 18, "amount": 1223, "userSeen": true, "__typename": "Budget" }], "__typename": "Task" }, { "id": 23, "deletedAt": "1634650264000", "status": "BUDGETED", "paid": null, "budgets": [{ "id": 20, "amount": 20000, "userSeen": true, "__typename": "Budget" }], "__typename": "Task" }], "userConversations": [{ "id": 11, "__typename": "Conversation" }, { "id": 10, "__typename": "Conversation" }, { "id": 9, "__typename": "Conversation" }], "professionalProfile": { "id": 1, "isProvider": true, "experience": "Asdasd", "__typename": "ProfessionalProfile" }, "__typename": "User" },
+    { "id": 4, "firstName": "Sebastian", "lastName": "Perez", "profilePicture": "https://mannoapp.s3.sa-east-1.amazonaws.com/profile/5BmanyRIptWIO4djUWYwFnLBTBC3.jpeg", "email": "sebastiandperez37@gmail.com", "phone": "541122800360", "deleted": false, "createdAt": "1634648617000", "tasks": [{ "id": 27, "deletedAt": "1634650264000", "status": "PUBLISHED", "paid": null, "budgets": [], "__typename": "Task" }, { "id": 28, "deletedAt": "1634650264000", "status": "BUDGETED", "paid": null, "budgets": [{ "id": 23, "amount": 50000, "userSeen": true, "__typename": "Budget" }], "__typename": "Task" }, { "id": 29, "deletedAt": "1634650264000", "status": "PUBLISHED", "paid": null, "budgets": [], "__typename": "Task" }, { "id": 30, "deletedAt": null, "status": "QUALIFIED", "paid": 22000, "budgets": [{ "id": 22, "amount": 22000, "userSeen": true, "__typename": "Budget" }], "__typename": "Task" }, { "id": 31, "deletedAt": "1634650264000", "status": "PUBLISHED", "paid": null, "budgets": [], "__typename": "Task" }, { "id": 32, "deletedAt": "1634650264000", "status": "PUBLISHED", "paid": null, "budgets": [], "__typename": "Task" }, { "id": 33, "deletedAt": "1634650264000", "status": "PUBLISHED", "paid": null, "budgets": [], "__typename": "Task" }, { "id": 34, "deletedAt": "1634650264000", "status": "PUBLISHED", "paid": null, "budgets": [], "__typename": "Task" }, { "id": 35, "deletedAt": "1634650264000", "status": "PUBLISHED", "paid": null, "budgets": [], "__typename": "Task" }, { "id": 36, "deletedAt": "1634650264000", "status": "PUBLISHED", "paid": null, "budgets": [], "__typename": "Task" }, { "id": 37, "deletedAt": "1634650264000", "status": "PUBLISHED", "paid": null, "budgets": [], "__typename": "Task" }, { "id": 38, "deletedAt": "1634650264000", "status": "PUBLISHED", "paid": null, "budgets": [], "__typename": "Task" }, { "id": 39, "deletedAt": "1634650264000", "status": "PUBLISHED", "paid": null, "budgets": [], "__typename": "Task" }, { "id": 40, "deletedAt": "1634650264000", "status": "PUBLISHED", "paid": null, "budgets": [], "__typename": "Task" }], "userConversations": [{ "id": 13, "__typename": "Conversation" }], "professionalProfile": { "id": 2, "isProvider": true, "experience": "asdasd 2", "__typename": "ProfessionalProfile" }, "__typename": "User" },
+    { "id": 5, "firstName": "Sebastián Darío", "lastName": "Perez", "profilePicture": "https://mannoapp.s3.sa-east-1.amazonaws.com/profile/QjnFM4HMQ5fZJ5zA2CEEXWIqobo2.jpeg", "email": "sebastian.p@solunika.com", "phone": "541122800360", "deleted": false, "createdAt": "1634648642000", "tasks": [{ "id": 6, "deletedAt": null, "status": "HIRED", "paid": null, "budgets": [{ "id": 2, "amount": 3000, "userSeen": true, "__typename": "Budget" }], "__typename": "Task" }, { "id": 7, "deletedAt": null, "status": "HIRED", "paid": null, "budgets": [{ "id": 3, "amount": 1000, "userSeen": true, "__typename": "Budget" }, { "id": 4, "amount": 2000, "userSeen": true, "__typename": "Budget" }], "__typename": "Task" }, { "id": 8, "deletedAt": null, "status": "QUALIFIED", "paid": 5000, "budgets": [{ "id": 5, "amount": 5000, "userSeen": true, "__typename": "Budget" }, { "id": 6, "amount": 2000, "userSeen": true, "__typename": "Budget" }], "__typename": "Task" }, { "id": 9, "deletedAt": null, "status": "HIRED", "paid": null, "budgets": [{ "id": 7, "amount": 3000, "userSeen": true, "__typename": "Budget" }, { "id": 8, "amount": 2800, "userSeen": true, "__typename": "Budget" }], "__typename": "Task" }, { "id": 10, "deletedAt": null, "status": "BUDGETED", "paid": null, "budgets": [{ "id": 13, "amount": 5000, "userSeen": false, "__typename": "Budget" }], "__typename": "Task" }, { "id": 11, "deletedAt": "1634650264000", "status": "PUBLISHED", "paid": null, "budgets": [], "__typename": "Task" }, { "id": 12, "deletedAt": "1634650264000", "status": "PUBLISHED", "paid": null, "budgets": [], "__typename": "Task" }, { "id": 13, "deletedAt": "1634650264000", "status": "BUDGETED", "paid": null, "budgets": [{ "id": 14, "amount": 1000, "userSeen": false, "__typename": "Budget" }], "__typename": "Task" }, { "id": 14, "deletedAt": "1634650264000", "status": "PUBLISHED", "paid": null, "budgets": [], "__typename": "Task" }, { "id": 15, "deletedAt": "1634650264000", "status": "PUBLISHED", "paid": null, "budgets": [], "__typename": "Task" }, { "id": 16, "deletedAt": "1634650264000", "status": "BUDGETED", "paid": null, "budgets": [{ "id": 15, "amount": 2000, "userSeen": false, "__typename": "Budget" }], "__typename": "Task" }, { "id": 24, "deletedAt": "1634650264000", "status": "PUBLISHED", "paid": null, "budgets": [], "__typename": "Task" }, { "id": 25, "deletedAt": "1634650264000", "status": "PUBLISHED", "paid": null, "budgets": [], "__typename": "Task" }, { "id": 26, "deletedAt": null, "status": "REALIZED", "paid": 1122, "budgets": [{ "id": 21, "amount": 1122, "userSeen": true, "__typename": "Budget" }], "__typename": "Task" }], "userConversations": [{ "id": 12, "__typename": "Conversation" }, { "id": 8, "__typename": "Conversation" }, { "id": 5, "__typename": "Conversation" }, { "id": 4, "__typename": "Conversation" }, { "id": 2, "__typename": "Conversation" }], "professionalProfile": { "id": 6, "isProvider": true, "experience": "zxczxc", "__typename": "ProfessionalProfile" }, "__typename": "User" },
+    { "id": 12, "firstName": "Sebastian", "lastName": "Perez", "profilePicture": "https://mannoapp.s3.sa-east-1.amazonaws.com/profile/DbcAcIJRragUlC8jNrhvQmJZirq2.jpeg", "email": "sebastiandperez37@gmail.com", "phone": "541122800360", "deleted": false, "createdAt": "1637100290000", "tasks": [], "userConversations": [], "professionalProfile": { "id": 3, "isProvider": true, "experience": "asdasd 43", "__typename": "ProfessionalProfile" }, "__typename": "User" },
+    { "id": 13, "firstName": "DevOps", "lastName": "Solunika", "profilePicture": "https://mannoapp.s3.sa-east-1.amazonaws.com/profile/rwD9G4GzDtOsg6P8NwyytI4qLkk2.jpeg", "email": "devopssolunika@gmail.com", "phone": "541122800360", "deleted": false, "createdAt": "1637251551000", "tasks": [], "userConversations": [], "professionalProfile": null, "__typename": "User" }
+  ]
+  const avatarRenderer = (row) => {
+    return <div>{row.firstName} {row.lastName}</div>
+    // return <Box sx={{ alignItems: 'center', display: 'flex' }}>
+    //   <Avatar src={row.profilePicture} sx={{ mr: 2 }}>{`${row.firstName[0]}${row.lastName[0]}`}</Avatar>
+    //   <Typography color="textPrimary" variant="body1">{row.firstName} {row.lastName}</Typography>
+    // </Box>
+  }
+
+
+  return <CustomDataGrid
+    // reload={runQuery}
+    // selectedActions={sendNotificationsForTable}
+    hideFooterSelectedRowCount
+    checkboxSelection
+    label="Usuarios"
+    rows={rows}
+    columns={[
+      { id: "id", label: "ID", type: "number", hide: true },
+      { id: "firstName", label: "Nombre", customStringValue: row => `${row.firstName} ${row.lastName}`, customRender: avatarRenderer },
+      // { id: "createdAt", label: "Fecha de creación", type: "date", customStringValue: dateStringValue, customRender: dateRenderer },
+      // { id: "tasksCount", label: "Tareas creadas", type: "number", customStringValue: row => get(row, "tasks.length", 0), customRender: row => get(row, "tasks.length", 0) },
+      // { id: "budgetsCount", label: "Presupuestos Recibidos", type: "number", customStringValue: calcBudgets, customRender: calcBudgets },
+      // { id: "conversationsCount", label: "Conversaciones", type: "number", customStringValue: calcConversations, customRender: calcConversations },
+      // { id: "seenBudgetsCount", label: "Presupuestos Vistos", type: "number", customStringValue: calcSeenBudgets, customRender: calcSeenBudgets },
+      // { id: "deletedTasksCount", label: "Tareas Eliminadas", type: "number", customStringValue: calcDeletedTasks, customRender: calcDeletedTasks },
+      // { id: "hiredTasksCount", label: "Tareas Contratadas", type: "number", customStringValue: calcHiredTasks, customRender: calcHiredTasks },
+      // { id: "qualifiedTasksCount", label: "Tareas Calificadas", type: "number", customStringValue: calcQualifiedTasks, customRender: calcQualifiedTasks },
+      // { id: "totalPaid", label: "Total pagado", type: "number", customStringValue: calcTotalPaid, customRender: row => new Intl.NumberFormat('es-AR', { style: 'currency', currency: 'ARS' }).format(calcTotalPaid(row)) },
+      // { id: "email", label: "Email" },
+      // { id: "phone", label: "Telefono" },
+      // { id: "professionalProfile.isProvider", label: "Es Experto", customStringValue: isProviderBoolean, customRender: isProviderBoolean },
+      //   { id: "title", label: "Titulo", flex: 2 },
+      //   { id: "duration", label: "Duracion", type: "date", customStringValue: dateStringValue, customRender: dateDistanceRenderer, filtrable: false },
+      //   { id: "status", label: "Estado", customStringValue: tableTaskStatusStringValue, customRender: tableTaskStatusRender },
+      //   { id: "category/subcategory", label: "Categoria", customStringValue: tableCategorySbucategoryRender, customRender: tableCategorySbucategoryRender },
+      //   { id: "budgetsCount", label: "Presupuestos", type: "number", customStringValue: row => row.budgets?.length || 0, customRender: row => row.budgets?.length || 0 },
+      //   { id: "budgetsSeen", label: "Presupuestos Vistos", type: "number", customStringValue: row => row.budgets?.filter(b => b.userSeen).length || 0, customRender: row => row.budgets?.filter(b => b.userSeen).length || 0 },
+      //   {
+      //     id: "budgetsTotal", label: "Suma Presupuestos", type: "number", customStringValue: row => row.budgets?.reduce((p, c) => p + c.amount, 0), customRender: row => new Intl.NumberFormat('es-AR', {
+      //       style: 'currency', currency: 'ARS', minimumFractionDigits: 0,
+      //       maximumFractionDigits: 0,
+      //     }).format(row.budgets?.reduce((p, c) => p + c.amount, 0))
+      //   },
+    ]} />
 }
 
 export default App
